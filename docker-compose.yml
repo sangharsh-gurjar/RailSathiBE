@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+  web:
+    build:
+      context: .
+      dockerfile: DOCKERFILE
+    command: sh -c "python main.py migrate && python main.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:5002"
+    env_file:
+      - .env
+    depends_on:
+      - db
+   
+
+volumes:
+  postgres_data:
+
