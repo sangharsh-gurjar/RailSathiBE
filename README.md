@@ -1,6 +1,6 @@
 # 🚉 RailSathiBE - Backend Assignment
 
-This is a Dockerized **FastAPI** backend project (initially assumed Django) using **PostgreSQL** as its database. It supports a simple `/items/` endpoint and is ready to run with Docker Compose.
+This is a Dockerized **FastAPI** backend project using **PostgreSQL** as its database.
 
 ---
 
