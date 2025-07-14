@@ -32,3 +32,21 @@ These instructions will get your backend running locally using Docker.
 ```bash
 git clone https://github.com/YOUR_USERNAME/RailSathiBE.git
 cd RailSathiBE
+```
+### 2. Create .env file
+
+```
+cp .env.example .env
+
+```
+### 3. Start Services
+
+```
+docker compose up --build
+```
+  or
+```  
+sudo docker compose up --build
+
+
+```
